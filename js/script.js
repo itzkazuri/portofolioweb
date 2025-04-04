@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const modeToggleButton = document.getElementById('mode-toggle');
     const body = document.body;
-    const typingElement = document.getElementById('typing-effect');
+    const typingElement = document.getElementById('typing-effect'); // Pastikan ID ini sesuai dengan elemen HTML Anda
     const visitorCountElement = document.getElementById('visitor-count');
     const musicToggleButton = document.getElementById('music-toggle');
     const backgroundMusic1 = document.getElementById('background-music1');
@@ -62,14 +62,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- Typing Effect Logic ---
-    const textToType = "WELCOME ( TYPING SCRIPT WITH JS )";
+    // --- Typing Effect Logic (Looping Multiple Words) ---
+    const textsToType = [
+        "hello😊👋",
+        "i'm kadek juli",
+        "this is my portfolio",
+        "i'm still learning... but doing my best!"
+      ];
+    let textIndex = 0;
     let charIndex = 0;
+
     function type() {
-        if (typingElement && charIndex < textToType.length) {
-            typingElement.textContent += textToType.charAt(charIndex);
+        if (!typingElement) return; // Pastikan elemen ada
+
+        if (textIndex >= textsToType.length) textIndex = 0; // Loop ke teks pertama
+        const currentText = textsToType[textIndex];
+
+        if (charIndex < currentText.length) {
+            typingElement.textContent += currentText.charAt(charIndex);
             charIndex++;
-            setTimeout(type, 100);
+            setTimeout(type, 100); // Kecepatan mengetik
+        } else {
+            setTimeout(erase, 1500); // Delay sebelum menghapus
+        }
+    }
+
+    function erase() {
+        if (!typingElement) return; // Pastikan elemen ada
+
+        if (charIndex > 0) {
+            typingElement.textContent = typingElement.textContent.slice(0, -1);
+            charIndex--;
+            setTimeout(erase, 50); // Kecepatan menghapus
+        } else {
+            textIndex++;
+            setTimeout(type, 300); // Delay sebelum mengetik kata berikutnya
         }
     }
 
@@ -135,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     repoContainer.appendChild(projectCard);
                 });
             } catch (error) {
-                repoContainer.innerHTML = "<p>Failed to load projects. Check console for details.</p>";
+                repoContainer.innerHTML = "<p>what are you doing you have too many request to my website, try again later</p>";
                 console.error("Error fetching GitHub repositories:", error);
             }
         }
@@ -145,11 +172,10 @@ document.addEventListener('DOMContentLoaded', () => {
     async function detectUserLocationAndSetLanguage() {
         try {
             const response = await fetch('https://ipapi.co/json/');
-            if (!response.ok) {
-                throw new Error('Failed to fetch IP data');
-            }
+            if (!response.ok) throw new Error('Gagal mengambil data IP');
+
             const data = await response.json();
-            const countryCode = data.country_code; // Mendapatkan kode negara pengguna (ID, JP, dll.)
+            const countryCode = data.country;
 
             let lang;
             if (countryCode === 'ID') {
@@ -157,23 +183,30 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (countryCode === 'JP') {
                 lang = 'ja';
             } else {
-                lang = 'en'; // Bahasa default
+                lang = 'en';
             }
 
-            // Simpan preferensi bahasa di localStorage (opsional, bisa dihilangkan jika i18n Anda menanganinya)
+            // Simpan dan terapkan bahasa
             localStorage.setItem('language', lang);
-
-            // Terapkan bahasa yang sesuai menggunakan i18n.js
-            i18n.changeLanguage(lang);
-
-            // Set nilai dropdown selector bahasa jika ada
-            if (langSelect) {
-                langSelect.value = lang;
+            if (langSelect) langSelect.value = lang;
+            // Asumsikan ada fungsi changeLanguage yang sudah Anda definisikan
+            if (typeof changeLanguage === 'function') {
+                changeLanguage(lang);
             }
+
         } catch (error) {
-            console.error("Gagal mendeteksi lokasi pengguna:", error);
+            console.error('Gagal mendeteksi lokasi pengguna:', error);
+
+            // Fallback ke bahasa Inggris jika error
+            const fallbackLang = 'en';
+            localStorage.setItem('language', fallbackLang);
+            if (langSelect) langSelect.value = fallbackLang;
+            if (typeof changeLanguage === 'function') {
+                changeLanguage(fallbackLang);
+            }
         }
     }
+
 
     // --- Mobile Navigation Logic ---
     mobileNavButtons.forEach(button => {
@@ -190,8 +223,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Initialize Everything ---
     detectSystemTheme();
     updateVisitorCount();
-    if (typingElement) setTimeout(type, 500);
     loadGitHubProjects();
+
+    // Jalankan efek mengetik setelah DOM sepenuhnya dimuat dan elemen typing ada
+    if (typingElement) setTimeout(type, 500);
 
     // Jalankan deteksi lokasi pengguna dan atur bahasa
     detectUserLocationAndSetLanguage();

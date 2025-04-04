@@ -26,14 +26,16 @@ const translations = {
         'nav.about': 'Tentang Saya',
         'nav.projects': 'Proyek Saya',
         'nav.skills': 'Keahlian Saya',
+        'nav.contact': 'kontak saya',
         'button.darkmode': 'Mode Gelap',
-        'home.title': 'HALO NAMA SAYA KADEK JULI SELAMAT DATANG DI WEBSITE SAYA',
+        'home.title': 'SELAMAT DATANG DI WEBSITE PORTOFOLIO SAYA',
         'about.whoami': 'Siapa Saya?', 
-        'about.bio': 'Halo 😊👋, saya I Kadek Juliartawan, umur saya 21 tahun dan tinggal di Sukawati, Gianyar, Bali. Sekarang saya masih kuliah di INSTIKI, semester 4. Saya seorang developer pemula yang masih terus belajar dan sedang mencoba mengembangkan beberapa proyek kecil di GitHub. Terima kasih sudah mampir ke website saya dan meluangkan waktu untuk melihat-lihat isi di sini. Ngomong-ngomong, saya juga punya mimpi besar — saya pengen banget bisa kerja di Jepang suatu hari nanti, jadi app developer dan juga desainer di sana. Belajar bahasa Jepang itu nggak gampang, tapi saya percaya kalau terus konsisten, pasti bisa. Alasan saya pengen ke Jepang itu... anu, pengen ke Akihabara buat lihat anime, terus pengen banget lihat Gunung Fuji yang indah, juga jalan-jalan ke desa tradisional dan kuil-kuil di sana. Semoga suatu hari nanti impian itu bisa tercapai ya 🙏✨',
-        'about.hobbies': 'Hobi Saya', 
-        'about.achievements': 'Projek yang saya kerjakan',
+        'about.bio': 'Halo 😊👋, saya I Kadek Juliartawan, umur saya 21 tahun dan tinggal di Sukawati, Gianyar, Bali. Sekarang saya masih kuliah di INSTIKI, semester 4. Saya ini orangnya agak pemalu kalau pertama kali ketemu orang baru, tapi kalau sudah dekat, saya bakal jadi sangat akrab dan suka ngobrol. Saya juga ambivert — kadang introvert saat di rumah, tapi bisa jadi ekstrovert di kampus atau saat kumpul bareng teman-teman. Saya seorang developer pemula yang masih terus belajar dan sedang mencoba mengembangkan beberapa proyek kecil di GitHub. Terima kasih sudah mampir ke website saya dan meluangkan waktu untuk melihat-lihat isi di sini. Ngomong-ngomong, saya juga punya mimpi besar — saya pengen banget bisa kerja di Jepang suatu hari nanti, jadi app developer dan juga desainer di sana. Belajar bahasa Jepang itu nggak gampang, tapi saya percaya kalau terus konsisten, pasti bisa. Alasan saya pengen ke Jepang itu... anu, saya pengen banget jalan-jalan ke Akihabara buat lihat suasana otaku yang seru dan beli figure anime di sana, terus juga pengen lihat Gunung Fuji yang indah, dan menjelajahi desa tradisional serta kuil-kuil yang tenang. Semoga suatu hari nanti impian itu bisa tercapai ya 🙏✨',
+        'about.hobbies': 'Hobi Saya',
+        'about.title': "Tentang Saya", 
+        'about.achievements': 'Pengalaman yang saya miliki',
         'projects.title': 'PROYEK SAYA',
-        'skills.title': 'KEAHLIAN SAYA',
+        'skills.title': 'SKILL SAYA',
         'footer.thanks': 'Terima kasih telah mengunjungi website saya!',
         'music.toggle': 'Nyalakan/Matikan Musik',
         'pengalaman.magang': 'menguasai wordpress di magang',
@@ -49,12 +51,14 @@ const translations = {
         'nav.about': 'About me',
         'nav.projects': 'My Projects',
         'nav.skills': 'My Skills',
+        'nav.contact': 'contact me',
         'button.darkmode': 'Dark Mode',
-        'home.title': 'HELLO MY NAME IS KADEK JULI WELCOME TO MY WEBSITE',
+        'home.title': 'WELCOME TO MY PORTOFOLIO WEBSITE',
         'about.whoami': 'Who Am I?',
-       'about.bio': 'Hey 😊👋, I’m I Kadek Juliartawan, 21 years old, currently living in Sukawati, Gianyar, Bali. I’m a 4th semester student at INSTIKI, still learning and growing as a beginner developer. Right now, I’m working on some small projects on GitHub. Thanks for stopping by and spending time exploring my website. Oh, and by the way—I have a big dream! I really want to work in Japan someday as an app developer and designer. Learning Japanese isn’t easy, but I’m determined to keep going and make it happen. Uhh, the reason I want to go to Japan is... well, to visit Akihabara and see all the anime stuff, admire the beautiful Mount Fuji, and explore those peaceful traditional villages and shrines. I hope that one day, this dream will come true ✨',
+      'about.bio': 'Hey 😊👋, I’m I Kadek Juliartawan, 21 years old, currently living in Sukawati, Gianyar, Bali. I’m a 4th semester student at INSTIKI. I’m the type of person who’s a little shy when meeting new people, but once we get close, I become really friendly and talkative. I consider myself an ambivert — introverted at home, but more extroverted at campus or when hanging out with friends. I’m still learning and growing as a beginner developer, currently working on some small projects on GitHub. Thanks for stopping by and spending time exploring my website. Oh, and by the way—I have a big dream! I really want to work in Japan someday as an app developer and designer. Learning Japanese isn’t easy, but I’m doing my best to stay consistent and keep improving. Uhh, the reason I want to go to Japan is... well, I really want to walk around Akihabara, enjoy the otaku vibes, and buy some anime figures. I also want to see the beautiful Mount Fuji, and visit peaceful traditional villages and shrines. I hope that one day, this dream will come true ✨',
         'about.hobbies': 'My Hobbies',
-        'about.achievements': 'The project I am currently working on',
+        'about.title': "About Me",
+        'about.achievements': 'Here’s a bit about what I’ve done so far',
         'projects.title': 'MY PROJECTS',
         'skills.title': 'MY SKILLS',
         'footer.thanks': 'Thanks for visiting my website!',
@@ -72,12 +76,14 @@ const translations = {
         'nav.about': '私について',
         'nav.projects': 'プロジェクト',
         'nav.skills': 'スキル',
+        'nav.contact': 'お問い合わせ',
         'button.darkmode': 'ダークモード',
-        'home.title': 'こんにちは、私の名前はカデック・ジュリです。私のウェブサイトへようこそ',
+        'home.title': 'こん私のポートフォリオサイトへようこそ',
         'about.whoami': '自己紹介',
-        'about.bio': 'やっほー😊👋 バリ島ギャニャールのスカワティに住んでるカデック・ジュリアルタワンって言います。今はINSTIKIのキャンパスで4セメスター目の学生で、まだまだ初心者の開発者だけど、少しずつGitHubで自分の小さなプロジェクトを作ってます。このサイトを見に来てくれて本当にありがとう！あとね、実は将来、日本でアプリ開発者＆デザイナーとして働くのが夢なんだ〜✨日本語の勉強って難しいけど、コツコツ頑張ってるよ💪 えっと、なんで日本に行きたいかっていうと…秋葉原でアニメを見たり、富士山の美しい景色を眺めたり、日本の伝統的な村や神社も巡ってみたいなって思ってて。いつかその夢が叶うといいな〜🌸',
+       'about.bio': 'やっほー😊👋 バリ島ギャニャールのスカワティに住んでるカデック・ジュリアルタワンって言います。今はINSTIKIのキャンパスで4セメスター目の学生です。えっと、私の性格をちょっと話すと…初対面のときはちょっと恥ずかしがり屋なんだけど、仲良くなるとすごくおしゃべりでフレンドリーになります😅 あと、自分ではアンビバートだと思ってて、家では静かなインドア派だけど、キャンパスや友達といるときはけっこう外向的になるんだ〜。まだまだ初心者の開発者だけど、少しずつGitHubで自分の小さなプロジェクトを作ってます。このサイトを見に来てくれて本当にありがとう！あとね、実は将来、日本でアプリ開発者＆デザイナーとして働くのが夢なんだ〜✨日本語の勉強って難しいけど、コツコツ頑張ってるよ💪 なんで日本に行きたいかっていうと…えっと、秋葉原をぶらぶら歩いてフィギュアを買ったり、富士山のきれいな景色を見たり、日本の伝統的な村や神社をゆっくり巡ったりしてみたいんだ〜。いつかその夢が叶うといいな〜🌸',
         'about.hobbies': '趣味',
-        'about.achievements': '現私が開発したプロジェクト',
+        'about.title': "わたしについて",
+        'about.achievements': 'これまでの経験',
         'projects.title': '私のプロジェクト',
         'skills.title': '私のスキル',
         'footer.thanks': '私のウェブサイトをご覧いただきありがとうございます！',
@@ -104,7 +110,12 @@ const defaultLanguage = ['id', 'en', 'ja'].includes(savedLanguage) ? savedLangua
 document.getElementById('language-select').value = defaultLanguage;
 
 // Terapkan bahasa saat halaman dimuat
-document.addEventListener('DOMContentLoaded', function() {
-    changeLanguage(defaultLanguage);
+document.addEventListener('DOMContentLoaded', function () {
+    if (savedLanguage) {
+        document.getElementById('language-select').value = savedLanguage;
+        changeLanguage(savedLanguage);
+    } else {
+        detectUserLocationAndSetLanguage();
+    }
 });
 

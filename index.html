@@ -4,43 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title">Kadek Juli</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap&icon_names=toggle_on,toggle_off" />
    
 </head>
 <body>
-    <header>
-        <div class="logo">Kadek Julli</div>
+    <body>
+        <header>
+            <div class="logo">Kadek Juli</div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </nav>
         
-        <nav>
-            <ul>
-                <li><a href="#home" data-i18n="nav.home">Home</a></li>
-                <li><a href="#about" data-i18n="nav.about">About</a></li>
-                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
-                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
-                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-            </ul>
-        </nav>
-    
-        <div class="header-right-elements">
-            <div class="language-selector">
-                <select id="language-select">
-                    <option value="id">Indonesia</option>
-                    <option value="en">English</option>
-                    <option value="ja">日本語</option>
-                </select>
+            <div class="header-right-elements">
+                <div class="language-selector">
+                    <select id="language-select">
+                        <option value="id">Indonesia</option>
+                        <option value="en">English</option>
+                        <option value="ja">日本語</option>
+                    </select>
+                </div>
+                <button class="toggle-button" id="mode-toggle" aria-label="Toggle dark mode"> 
+                    <span id="light-icon">☀️</span> 
+                    <span id="dark-icon" style="display: none;">🌙</span> 
+                </button> 
             </div>
-            <button class="toggle-button" id="mode-toggle" aria-label="Toggle dark mode"> 
-                <span id="light-icon">☀️</span> 
-                <span id="dark-icon" style="display: none;">🌙</span> 
-            </button> 
-        </div>
-    </header>
-    
+        </header>
     
     <main>
         <section id="home">
-            <h1 data-i18n="home.title">HELLO MY NAME IS KADEK JULI WELCOME TO MY WEBSITE</h1>
+            <h1 data-i18n="home.title"></h1>
             <p><span id="typing-effect"></span></p>
         </section>
 
@@ -48,29 +48,29 @@
             <h2 data-i18n="about.title">ABOUT ME</h2>
             <div class="about-container">
                 <div class="about-photo">
-                    <img src="/img/c8e3adbd-3968-4bd6-ab3e-c95c53b32607.jpg" alt="Kadek Juli" class="profile-photo">
+                    <img src="img/c8e3adbd-3968-4bd6-ab3e-c95c53b32607.jpg" alt="Kadek Juli" class="profile-photo">
                 </div>
                 <div class="about-content">
                     <div class="about-bio">
-                        <h3 data-i18n="about.whoami">Who Am I?</h3>
+                        <h3 data-i18n="about.whoami"></h3>
                         <p data-i18n="about.bio"></p>
                     </div>
                     <div class="about-details">
                         <div class="about-hobbies">
-                            <h3 data-i18n="about.hobbies">My Hobbies</h3>
+                            <h3 data-i18n="about.hobbies"></h3>
                             <ul>
-                                <li data-i18n="hobbies.coding">Watching Anime and read manga</li>
-                                <li data-i18n="hobbies.music">Playing Music and singing</li>
-                                <li data-i18n="hobbies.photo">i'm also coding</li>
-                                <li data-i18n="hobbies.reading">Sometimes, attending cosplay events</li>
+                                <li data-i18n="hobbies.coding"></li>
+                                <li data-i18n="hobbies.music"></li>
+                                <li data-i18n="hobbies.photo"></li>
+                                <li data-i18n="hobbies.reading"></li>
                             </ul>
                         </div>
                         <div class="about-achievements">
-                            <h3 data-i18n="about.achievements">Achievements</h3>
+                            <h3 data-i18n="about.achievements"></h3>
                             <ul>
                                 <li data-i18n="pengalaman.magang"></li>
-                                <li data-i18n="pengalaman.projek">buat projek laravel,html,css dan android studio</li>
-                                <li data-i18n="pengalaman.portofolio">pengalaman buat website protofolio</li>
+                                <li data-i18n="pengalaman.projek"></li>
+                                <li data-i18n="pengalaman.portofolio"></li>
                             </ul>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
         </section>
 
         <section id="projects">
-            <h2 data-i18n="projects.title">MY PROJECT</h2>
+            <h2 data-i18n="projects.title"></h2>
             <div class="project-gallery" id="github-projects">
                 <p data-i18n="projects.loading">Loading projects...</p>
             </div>
@@ -103,45 +103,45 @@
     <!-- Floating Menu (Mobile Only) -->
     <div class="floating-navbar">
         <a href="#home" class="nav-item" title="Home">
-            <img src="/img/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Home Icon">
+            <img src="img/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Home Icon">
         </a>
         <a href="#about" class="nav-item" title="About">
-            <img src="/img/about.svg" alt="About Icon">
+            <img src="img/about.svg" alt="About Icon">
         </a>
         <a href="#projects" class="nav-item" title="Projects">
-            <img src="/img/tactic_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Projects Icon">
+            <img src="img/tactic_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Projects Icon">
         </a>
         <a href="#skills" class="nav-item" title="Skills">
-            <img src="/img/code_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="Skills Icon">
+            <img src="img/code_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="Skills Icon">
         </a>
         <a href="#contact" class="nav-item" title="Contact">
-            <img src="/img/contacts_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="Contact Icon">
+            <img src="img/contacts_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="Contact Icon">
         </a>
     </div>
     
     
 
-    <audio id="background-music1" src="track1.mp3" preload="auto" loop></audio>
+    <audio id="background-music1" src="public/track1.mp3" preload="auto" loop></audio>
     <button id="music-toggle" aria-label="Toggle Music"></button>
     
     <footer id="contact">
-        <p data-i18n="footer.thanks">Thanks for visiting my website!</p>
+        <p data-i18n="footer.thanks"></p>
         <div class="social-links">
             <a href="https://www.github.com/itzkazuri" target="_blank" rel="noopener noreferrer" title="GitHub">
-                <img src="/img/github-mark.png" alt="GitHub">
+                <img src="img/github-mark.png" alt="GitHub">
             </a>
-            <a href="https://www.instagram.com/njtyaa" target="_blank" rel="noopener noreferrer" title="Instagram">
-                <img src="/img/instagram-glyph-seeklogo.svg" alt="Instagram">
+            <a href="https://www.instagram.com/notdkjuli09" target="_blank" rel="noopener noreferrer" title="Instagram">
+                <img src="img/instagram-glyph-seeklogo.svg" alt="Instagram">
             </a>
             <a href="https://www.facebook.com/kadek.juli.1257" target="_blank" rel="noopener noreferrer" title="Facebook">
-                <img src="/img/icons8-facebook-100.svg" alt="Facebook">
+                <img src="img/icons8-facebook-100.svg" alt="Facebook">
             </a>
         </div>
         <p>Copyright &copy; 2025 Kadek Juli</p>
     </footer>
     
 
-    <script src="/js/script.js"></script>
-    <script src="/js/i18n.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/i18n.js"></script>
 </body>
 </html>
