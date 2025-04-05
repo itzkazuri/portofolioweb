@@ -42,7 +42,7 @@ const translations = {
         'pengalaman.projek': 'buat projek laravel, html, css dan android studio',
         'pengalaman.portofolio': 'pengalaman buat website portofolio',
         'hobbies.coding': 'Menonton anime dan membaca manga',
-        'hobbies.music': 'Main musik dan bernyanyi',
+        'hobbies.music': 'mendengarkan musik',
         'hobbies.photo': 'Saya juga suka ngoding',
         'hobbies.reading': 'Kadang-kadang ikut acara cosplay'
     },
@@ -67,7 +67,7 @@ const translations = {
         'pengalaman.projek': 'created projects with Laravel, HTML, CSS, and Android Studio',
         'pengalaman.portofolio': 'experience building a portfolio website',
         'hobbies.coding': 'Watching Anime and reading manga',
-        'hobbies.music': 'Playing music and singing',
+        'hobbies.music': 'listening to music',
         'hobbies.photo': 'I\'m also coding',
         'hobbies.reading': 'Sometimes, attending cosplay events'
     },
@@ -92,7 +92,7 @@ const translations = {
         'pengalaman.projek': 'Laravel、HTML、CSS、Android Studioでプロジェクトを作成しました',
         'pengalaman.portofolio': 'ポートフォリオウェブサイトの制作経験',
         'hobbies.coding': 'アニメを見たりマンガを読んだりするのが好きです',
-        'hobbies.music': '音楽を演奏したり歌ったりします',
+        'hobbies.music': '音楽を聴く',
         'hobbies.photo': 'コーディングも好きです',
         'hobbies.reading': '時々コスプレイベントにも参加します'
     }

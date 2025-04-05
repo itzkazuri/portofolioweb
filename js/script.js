@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- IP-Based Language Detection ---
     async function detectUserLocationAndSetLanguage() {
         try {
-            const response = await fetch('https://ipapi.co/json/'); 
+            // const response = await fetch('https://ipapi.co/json/'); 
             if (!response.ok) throw new Error('Gagal mengambil data IP');
 
             const data = await response.json();
