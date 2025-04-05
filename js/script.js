@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileNavButtons = document.querySelectorAll('.mobile-nav-buttons button');
     const langSelect = document.getElementById('language-select'); // Dapatkan elemen dropdown bahasa jika ada
     const shareButton = document.querySelector('.share-button');
+    const navLinks = document.querySelectorAll("header nav ul li a");
+    const sections = Array.from(document.querySelectorAll('main section, footer#contact'));
+    const floatingLinks = document.querySelectorAll(".floating-navbar .nav-item");
     let isMusicPlaying = false;
     let currentMusic = backgroundMusic1;
 
@@ -172,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- IP-Based Language Detection ---
     async function detectUserLocationAndSetLanguage() {
         try {
-            const response = await fetch('https://ipapi.co/json/');
+            const response = await fetch('https://ipapi.co/json/'); 
             if (!response.ok) throw new Error('Gagal mengambil data IP');
 
             const data = await response.json();
@@ -248,6 +251,42 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+
+        // --- Active Navbar Logic on Scroll ---
+        
+    
+        function setActiveNav() {
+            const scrollPos = window.scrollY + window.innerHeight / 3; // Deteksi posisi tengah layar
+    
+            let currentSectionId = "";
+            for (const section of sections) {
+                const rect = section.getBoundingClientRect();
+                const top = window.scrollY + rect.top;
+    
+                if (scrollPos >= top) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            }
+    
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active-nav');
+                } else {
+                    link.classList.remove('active-nav');
+                }
+            });
+            floatingLinks.forEach((item) => {
+                item.classList.remove("active");
+                if (item.getAttribute("href").includes(currentSectionId)) {
+                    item.classList.add("active");
+                }
+            });
+        }
+    
+        window.addEventListener('scroll', setActiveNav);
+        window.addEventListener('load', setActiveNav); // Set awal saat dimuat
+    
 
     // --- Initialize Everything ---
     detectSystemTheme();

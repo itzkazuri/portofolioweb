@@ -847,3 +847,26 @@ footer {
         width: 100%; /* 1 kartu per baris di ponsel */
     }
 }
+
+nav ul li a.active-nav {
+    font-weight: bold;
+    border-bottom: 2px solid var(--highlight-color);
+    color: var(--highlight-color);
+    background-color: #8a2be2 !important;
+    transform: scale(1.15);
+}
+
+nav ul li a.active {
+    font-weight: bold;
+    border-bottom: 2px solid var(--highlight-color);
+    color: var(--highlight-color);
+    background-color: #8a2be2 !important;
+    transform: scale(1.15);
+}
+
+/* Aktifkan highlight di floating navbar */
+.floating-navbar .nav-item.active {
+    background: #8a2be2; /* Warna ungu saat aktif */
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.6);
+    transform: scale(1.1);
+}
