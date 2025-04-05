@@ -129,9 +129,13 @@ header nav ul li a:hover {
     position: relative;  
 } 
      
+.language-selector {  
+    position: relative;  
+} 
+
 .language-selector select {  
     padding: 0.5rem 1rem;  
-    padding-right: 2rem;  
+    padding-right: 2rem;  /* Beri ruang untuk ikon dropdown */
     border-radius: 5px;  
     background-color: var(--card-bg);  
     color: var(--text-color);  
@@ -141,7 +145,7 @@ header nav ul li a:hover {
     cursor: pointer;  
     transition: all 0.3s ease;  
 } 
-     
+
 .language-selector::after {  
     content: "▼";  
     position: absolute;  
@@ -152,15 +156,15 @@ header nav ul li a:hover {
     color: var(--text-color);  
     font-size: 0.7rem;  
 } 
-     
+
 .language-selector select:hover {  
     border-color: #8a2be2;  
 } 
-     
+
 .language-selector select:focus {  
     outline: none;  
     box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.3);  
-} 
+}
  
 /* Floating Menu Styles (Mobile Only) */ 
 .floating-menu { 
@@ -443,7 +447,7 @@ section h2 {
     border: 1px solid var(--card-border);  
     border-radius: 8px;  
     padding: 1.5rem;  
-    width: 300px;  
+    width: calc(33.33% - 2rem);
     text-align: center;  
     transition: transform 0.2s ease, box-shadow 0.2s ease;  
     color: var(--text-color);  
@@ -487,39 +491,94 @@ section h2 {
     opacity: 0.8; /* Efek hover sedikit memudar */
 }
      
-/* Skills Section Styles */ 
-.skills-container {  
-    display: flex;  
-    flex-wrap: wrap;  
-    justify-content: center;  
-    gap: 2rem;  
-    max-width: 800px;  
-    margin: 0 auto;  
-} 
-     
-.skill-item {  
-    display: flex;  
-    flex-direction: column;  
-    align-items: center;  
-    width: 100px;  
-    transition: transform 0.2s ease;  
-} 
-     
-.skill-item:hover {  
-    transform: translateY(-5px);  
-} 
-     
-.skill-logo {  
-    width: 60px;  
-    height: 60px;  
-    margin-bottom: 0.5rem;  
-    object-fit: contain;  
-} 
-     
-.skill-item span {  
-    font-weight: bold;  
-    color: var(--text-color);  
-} 
+/* Skills Section - Clean Grid Layout */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Grid fleksibel */
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin: 2rem auto;
+    max-width: 900px;
+    justify-items: center; /* Pastikan item terpusat */
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+}
+
+.skill-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.8rem;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-logo {
+    transform: translateY(-5px) scale(1.1); /* Ganti animasi jadi naik */
+}
+
+.skill-item span {
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Desktop - Atur jumlah kolom agar tidak nanggung */
+@media (min-width: 1024px) {
+    .skills-container {
+        grid-template-columns: repeat(5, 1fr); /* Pastikan 5 kolom */
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .skill-logo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 0.8rem;
+        padding: 1.2rem;
+    }
+    
+    .skill-logo {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 0.6rem;
+    }
+    
+    .skill-item span {
+        font-size: 0.8rem;
+    }
+}
+
+
      
 /* Music Toggle Button Styling */ 
 #music-toggle {  
@@ -590,10 +649,6 @@ section h2 {
         padding: 0.3rem; 
     } 
      
-    .language-selector select { 
-        padding: 0.2rem 0.5rem; 
-    } 
- 
     .about-container {  
         flex-direction: column;  
         align-items: center;  
@@ -713,3 +768,82 @@ footer {
     }
   }
   
+  .share-button {
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.share-button:hover {
+    transform: scale(1.1);
+}
+
+.share-icon {
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+/* Warna ikon share menyesuaikan tema */
+[data-theme="dark"] .share-icon {
+    filter: brightness(0) invert(1); /* putih di dark mode */
+}
+
+[data-theme="light"] .share-icon {
+    filter: brightness(0); /* hitam di light mode */
+}
+
+
+/* Perbaikan Language Selector - Mobile */
+@media (max-width: 768px) {
+    .language-selector {
+        position: relative;
+        display: inline-block;
+        width: 100%; /* Pastikan ukuran penuh */
+    }
+
+    .language-selector select {
+        padding: 0.5rem 1rem;
+        padding-right: 2.5rem; /* Tambahkan lebih banyak ruang untuk ikon */
+        width: 100%;
+        border-radius: 5px;
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        border: 1px solid var(--card-border);
+        font-size: 0.9rem;
+        appearance: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .language-selector::after {
+        content: "▼";
+        position: absolute;
+        top: 50%;
+        right: 15px; /* Geser lebih ke kanan */
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: var(--text-color);
+        font-size: 0.8rem;
+        background-color: var(--card-bg);
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        width: calc(50% - 2rem); /* Contoh: 2 kartu per baris di tablet */
+    }
+}
+
+/* Smaller mobile screens (contoh: lebar maksimum 576px) */
+@media (max-width: 576px) {
+    .project-card {
+        width: 100%; /* 1 kartu per baris di ponsel */
+    }
+}

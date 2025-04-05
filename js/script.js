@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- IP-Based Language Detection ---
     async function detectUserLocationAndSetLanguage() {
         try {
-            const response = await fetch('https://ipapi.co/json/');
+            // const response = await fetch('https://ipapi.co/json/');
             if (!response.ok) throw new Error('Gagal mengambil data IP');
 
             const data = await response.json();
@@ -206,7 +206,59 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        // Cek apakah Web Share API tersedia
+        if (navigator.share) {
+            // Buat tombol share jika belum ada
+            let shareButton = document.querySelector('.share-button');
+            if (!shareButton) {
+                shareButton = document.createElement('button');
+                shareButton.textContent = 'Share';
+                shareButton.classList.add('share-button');
+                document.body.appendChild(shareButton);
+            }
+    
+            // Event Listener untuk Web Share API
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: document.title,
+                        text: 'Cek portofolio ini!',
+                        url: window.location.href,
+                    });
+                    console.log('Berhasil dibagikan!');
+                } catch (err) {
+                    console.error('Gagal membagikan:', err);
+                    alert('Gagal membagikan. Coba lagi!');
+                }
+            });
+        } else {
+            console.log('Web Share API tidak didukung.');
+    
+            // Fallback: Copy link ke clipboard
+            let shareButton = document.querySelector('.share-button');
+            if (!shareButton) {
+                shareButton = document.createElement('button');
+                shareButton.textContent = 'Copy Link';
+                shareButton.classList.add('share-button');
+                document.body.appendChild(shareButton);
+            }
+    
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(window.location.href);
+                    alert('Link telah disalin ke clipboard!');
+                } catch (err) {
+                    console.error('Gagal menyalin ke clipboard:', err);
+                    alert('Gagal menyalin link. Silakan salin manual.');
+                }
+            });
+        }
+    });
+    
+    
+    
 
     // --- Mobile Navigation Logic ---
     mobileNavButtons.forEach(button => {
